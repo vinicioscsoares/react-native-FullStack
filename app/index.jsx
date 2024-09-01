@@ -1,7 +1,7 @@
 import { Text, View, Image, ScrollView } from 'react-native'
 import { StatusBar } from 'expo-status-bar'
 import React, { Component } from 'react'
-import { Link} from 'expo-router'
+import { Link, Redirect,router } from 'expo-router'
 import { SafeAreaView } from 'react-native-safe-area-context'
 //import { ScrollView, GestureHandlerRootView } from 'react-native-gesture-handler'
 import { images } from '../constants'
@@ -11,7 +11,7 @@ export default function App() {
   return (
     <SafeAreaView className="bg-primary h-full">
       <ScrollView contentContainerStyle={{ height:'100%' }} >
-        <View className="w-full justify-center items-center h-full px-4">
+        <View className="w-full justify-center items-center min-h-[85vh] px-4">
           <Image
             source={images.logo}
             className="w-[130px] h-[84px]"
@@ -23,9 +23,9 @@ export default function App() {
             resizeMode='contain'
           />
           <View className="relative mt-5">
-            <Text className="text-3x1 text-white font-bold text-center">
+            <Text className="text-3xl text-white font-bold text-center">
               Descover Endless {"\n"} Possibilities with{' '}
-            <Text className="text-secondary-200">Aura</Text>
+            <Text className="text-secondary-200 text-4xl">Aora</Text>
             </Text>
 
             <Image 
@@ -40,7 +40,7 @@ export default function App() {
           </Text>
           <CustomButton 
            title="Continue with Email"
-           handlePress={()=>{}}
+           handlePress={ ()=> router.push('/sign-in') }
            containerStyles="w-full mt-7"
           />
 
