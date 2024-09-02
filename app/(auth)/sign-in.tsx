@@ -3,7 +3,7 @@ import { useState } from 'react';
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context';
 import FormField from '../../components/FormField'
-
+import { createUser } from '../../lib/appwrite'
 import { images } from '../../constants'
 import CustomButton from '@/components/CustomButton';
 import { Link } from 'expo-router';
@@ -17,7 +17,7 @@ const SignIn = () => {
   const [isSubmiting, setisSubmiting] = useState(false)
 
   const submit = () =>{
-
+    createUser();
   }
 
   return ( 
@@ -43,7 +43,7 @@ const SignIn = () => {
             otherStyles="mt-7"
           />
           <CustomButton 
-            title="Sign-in"
+            title="Sign in"
             handlePress={submit}
             containerStyles='mt-7'
             isLoading={isSubmiting}
